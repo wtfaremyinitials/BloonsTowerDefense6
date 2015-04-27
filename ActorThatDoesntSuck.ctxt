@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=x
+comment0.target=void\ setX(int)
+comment1.params=y
+comment1.target=void\ setY(int)
+comment2.params=point
+comment2.target=void\ moveTo(Point)
+numComments=3

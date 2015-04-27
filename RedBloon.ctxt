@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=path
+comment0.target=RedBloon(Path)
+comment1.params=path
+comment1.target=RedBloon(PathIterator)
+comment2.params=
+comment2.target=void\ pop()
+comment3.params=
+comment3.target=int\ numInnerBloons()
+numComments=4
