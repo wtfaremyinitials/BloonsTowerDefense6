@@ -1,33 +1,35 @@
 import greenfoot.*;
 
 /**
- * Write a description of class Dart here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A class to represent a dart thrown at a bloon
+ *
+ * @author Will Franzen
+ * @version 1.0.0
  */
 public class Dart extends ActorThatDoesntSuck
 {
-    private Bloon target;
-    
+    private Bloon target; // The bloon that the dart is following
+
+    // Constructor that takes a Bloon to target
     public Dart(Bloon target) {
-        this.target = target;
-        setImage("./images/dart_sm.png");
+        this.target = target; // Set the target variable
+        setImage("./images/dart_sm.png"); // Set the image to a dart
     }
-   
-    public void act() 
+
+    // Act method to track target
+    public void act()
     {
         try {
-            turnTowards(target.getX(), target.getY());
-            move(3);
-        
-            if(intersects(target)) {
-                target.pop(); 
-                ((BloonsWorld) getWorld()).addMoney(); 
-                getWorld().removeObject(this);
+            turnTowards(target.getX(), target.getY()); // Turn towards the target
+            move(3); // Move forward
+
+            if(intersects(target)) { // If it hit the bloon
+                target.pop(); // Pop the bloon
+                ((BloonsWorld) getWorld()).addMoney(); // Increment the money counter
+                getWorld().removeObject(this); // Remove the dart
             }
         } catch(IllegalStateException e) {
-            getWorld().removeObject(this);
-        }   
-    }    
+            getWorld().removeObject(this); // If the bloon doesn't exist anymore, delete yourself
+        }
+    }
 }

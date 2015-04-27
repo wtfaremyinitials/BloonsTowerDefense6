@@ -1,19 +1,21 @@
 import greenfoot.*;
 
 /**
- * Write a description of class BlueBloon here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * A sublass of the generic Bloon class that represents a blue one
+ *
+ * @author Will Franzen
+ * @version 1.0.0
  */
 public class BlueBloon extends Bloon
-{  
+{
+    // Simple constructor
     public BlueBloon(Path path)
     {
-        super(path);
-        setImage("./images/bluebloon_sm.png");
-    } 
-    
+        super(path); // Call super
+        setImage("./images/bluebloon_sm.png"); // Set the correct image
+    }
+
+    // Get the number of bloons to create on pop
     public int numInnerBloons() {
         return 2;
     }
