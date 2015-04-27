@@ -9,6 +9,8 @@ import java.util.Random;
  */
 public class BloonsWorld extends World
 {
+    private static int WORLD_SIZE = 500;
+
     private Random rand; // Random object for bloon color
     private Path path;   // Path for the bloons to follow
     private int delay;   // Counter to delay bloon spawn
@@ -18,7 +20,7 @@ public class BloonsWorld extends World
 
     // Empty constructor
     public BloonsWorld() {
-        super(500, 500, 1); // 500x500 world at 1x scale
+        super(WORLD_SIZE, WORLD_SIZE, 1); // 500x500 world at 1x scale
         Greenfoot.setSpeed(60); // Set world speed to reasonable default
         setBackground("./images/map.png"); // Set background to the map
         path = new Path(new Point[]{ // Create the path for the bloons to follow

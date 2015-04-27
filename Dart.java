@@ -8,6 +8,7 @@ import greenfoot.*;
  */
 public class Dart extends ActorThatDoesntSuck
 {
+    private static int DART_SPEED = 3;
     private Bloon target; // The bloon that the dart is following
 
     // Constructor that takes a Bloon to target
@@ -21,7 +22,7 @@ public class Dart extends ActorThatDoesntSuck
     {
         try {
             turnTowards(target.getX(), target.getY()); // Turn towards the target
-            move(3); // Move forward
+            move(DART_SPEED); // Move forward
 
             if(intersects(target)) { // If it hit the bloon
                 target.pop(); // Pop the bloon

@@ -9,6 +9,10 @@ import java.util.List;
  */
 public class Monkey extends ActorThatDoesntSuck
 {
+    private static int DEFAULT_DELAY = 100;
+    private static int DEFAULT_RANGE = 150;
+    private static int DEFAULT_PRICE = 100;
+
     private int delay; // The time between throws
     private int range; // How far the monkey can throw
     private int time;  // The counter that ticks toward the `delay`
@@ -18,9 +22,9 @@ public class Monkey extends ActorThatDoesntSuck
 
     // Constuctor for a basic Monkey
     public Monkey() {
-        delay = 100; // 100 ticks of delay
-        range = 150; // Range of 150
-        price = 100; // Costs $100
+        delay = DEFAULT_DELAY; // 100 ticks of delay
+        range = DEFAULT_RANGE; // Range of 150
+        price = DEFAULT_PRICE; // Costs $100
         setImage("./images/monkey.png"); // Set the image to a simple monkey
         paid = false; // This unit has not yet been paid for
     }
