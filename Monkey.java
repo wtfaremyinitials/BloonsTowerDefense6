@@ -1,5 +1,6 @@
 import greenfoot.*;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * A class to represent a monkey that throws darts
@@ -51,8 +52,15 @@ public class Monkey extends ActorThatDoesntSuck
         }
 
         if(delay < time) { // If it's time to throw a dart
-            List<Actor> possible = getObjectsInRange(range, Bloon.class); // Look for possible targets
+            List<Actor> possible = getObjectsInRange(range, Actor.class); // Look for possible targets
 
+            ListIterator<Actor> itr = possible.listIterator();
+            while (itr.hasNext()) {
+                if(!(itr.next() instanceof Bloon)) {
+                    itr.remove();
+                }
+            }
+            
             if(possible.size() == 0) // If there is none, give up
                 return;
 
